@@ -1,0 +1,96 @@
+main {
+  margin-top: 50px;
+  color: #e7e7eb;
+}
+h1,
+.result-subtitle {
+  text-align: center;
+}
+h1 {
+  font-weight: 600;
+  font-size: 60px;
+}
+.result-subtitle {
+  font-size: 25px;
+  font-weight: 350;
+  margin-top: 5px;
+}
+
+/*-- CONTENT --*/
+
+.result-content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 170px;
+}
+.result-content h2 {
+  font-weight: 300;
+  font-size: 50px;
+}
+.result-content h3 {
+  font-weight: 600;
+  font-size: 50px;
+}
+
+/*-- CENTER --*/
+
+/*-- Making circle --*/
+.result-big-circle {
+  margin-top: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  background: conic-gradient(#00ffff 0% 30%, #c2128d 30% 100%);
+}
+.result-circled-small {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background-color: #0e113c;
+  position: absolute;
+}
+.result-circled-text {
+  margin-top: 50px;
+  text-align: center;
+  padding-inline: 10px;
+}
+.result-circled-text h4 {
+  font-weight: 600;
+  font-size: 18px;
+}
+.result-circled-text h3 {
+  font-weight: 600;
+  font-size: 20px;
+  color: #02d4db;
+}
+.result-circled-text p {
+  font-weight: 200;
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/*-- RIGHT --*/
+.result-wrong {
+  text-align: right;
+}
+
+/*-- FOOTER --*/
+
+footer {
+  margin-top: 100px;
+  text-align: center;
+}
+footer button {
+  width: 13rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e7e7eb;
+  background-color: transparent;
+  padding: 20px;
+  border: 2px solid #fff;
+}
