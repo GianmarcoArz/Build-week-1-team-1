@@ -6,25 +6,23 @@
     <title>Quiz Page</title>
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/question.css" />
   </head>
 
   <body>
-    <div class="quiz-container">
-      <div class="header">
-        <img src="./assets/epicode_logo.png" alt="Logo Epicode" class="logo" />
+    <header><img src="./assets/epicode_logo.png" alt="Logo Epicode" class="logo" /></header>
+    <div class="question-quiz-container">
+      <div class="question">What does CPU stand for?</div>
+
+      <div class="question-options">
+        <button class="question-option">Central Processing Unit</button>
+        <button class="question-option">Central Process Unit</button>
+        <button class="question-option">Computer Personal Unit</button>
+        <button class="question-option">Central Processor Unit</button>
       </div>
 
-      <div class="question">How can I create a <strong>checkbox</strong> in HTML?</div>
-
-      <div class="options">
-        <button class="option"></button>
-        <button class="option correct"></button>
-        <button class="option"></button>
-        <button class="option"></button>
-      </div>
-
-      <div class="footer">
-        <p>QUESTION <span>1</span> / 10</p>
+      <div class="question-footer">
+        <p>QUESTION <span>1</span><span class="question-highlight">/10</span></p>
       </div>
     </div>
 

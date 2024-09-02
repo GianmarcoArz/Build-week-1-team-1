@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  background-size: cover;
+  color: #fff;
+  height: 100vh;
+  display: block;
+  font-family: "Outfit", sans-serif;
+  position: relative;
+}
+
+.question-quiz-container {
+  border-radius: 15px;
+  padding: 20px;
+  width: 500px;
+  margin: 50px auto 0 auto;
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.question {
+  margin: 20px 0;
+  font-size: 60px;
+  padding-bottom: 2rem;
+}
+
+.question-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+}
+.question-option {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 500px;
+  padding: 20px 80px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, border 0.3s ease;
+  white-space: nowrap;
+}
+
+.question-option:hover,
+.option:focus {
+  background: linear-gradient(90deg, #d20094, #900080);
+  border: 2px solid #d20094;
+  color: #fff;
+}
+
+.question-footer {
+  margin-top: 90px;
+  font-size: 14px;
+  clear: both;
+}
+
+.question-footer span {
+  font-weight: bold;
+}
+.question-footer .question-highlight {
+  color: #d20094;
+}
