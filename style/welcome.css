@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../assets/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Inter", sans-serif;
+  padding: 2rem 5rem 3rem 5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Outfit", sans-serif;
+}
+
+.logo {
+  width: 150px;
+}
+
+.button {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  color: #0b113b;
+  background-color: #00ffff;
+  border: none;
+  box-shadow: 0px 0px 10px 5px #00ffff;
+  transition: all ease-in-out 0.3s;
+}
+
+.button:hover {
+  box-shadow: 0px 0px 40px 5px #00ffff;
+}
+
+.welcometot {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.welcometitle {
+  color: white;
+  font-size: 70px;
+  padding-top: 3rem;
+}
+.welcomespan {
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.welcomeb {
+  font-weight: 700;
+}
+
+.welcomeinstructions {
+  margin-top: 3rem;
+  font-size: 40px;
+  font-weight: 700;
+  color: #d20094;
+}
+
+.welcomep {
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  font-size: 22px;
+}
+
+.welcomepoint {
+  color: white;
+  margin-left: 1.5rem;
+}
+
+.welcomepoint li {
+  padding: 0.5rem;
+}
+
+.welcomeimput {
+  padding-top: 5rem;
+  display: inline-block;
+}
+
+.welcomeimput p {
+  display: inline-block;
+  margin-right: 10rem;
+  color: white;
+}
+
+.welcomebox {
+  margin-right: 1rem;
+}
