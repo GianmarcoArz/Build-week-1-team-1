@@ -22,18 +22,25 @@
 
 .fdbck-stars {
   margin-block: 2rem 5rem;
+  cursor: default;
 }
 
-.fdbck-stars svg:nth-child(-n + 7) {
-  width: 40px;
-  margin-inline: 0.25rem;
-  fill: #00ffff;
-}
-
-.fdbck-stars svg:nth-child(n + 7) {
+.fdbck-stars svg {
   width: 40px;
   margin-inline: 0.25rem;
   fill: #0c113b;
+  filter: drop-shadow(0px 0px 3px #00ffff);
+  cursor: pointer;
+}
+
+.fdbck-stars svg:hover {
+  fill: #00ffff;
+}
+
+.fdbck-stars svg.selected {
+  width: 40px;
+  margin-inline: 0.25rem;
+  fill: #00ffff;
 }
 
 .fdbck-input {
