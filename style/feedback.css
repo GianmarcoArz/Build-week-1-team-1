@@ -2,7 +2,7 @@
   color: white;
   text-align: center;
   padding: 2rem 2rem;
-  width: 700px;
+  max-width: 700px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -12,6 +12,7 @@
 .fdbck-container h1 {
   font-size: 60px;
   margin-block: 2rem;
+  font-weight: 700;
 }
 
 .fdbck-container p {
