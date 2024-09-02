@@ -1,8 +1,49 @@
-body {
+.fdbck-container {
+  color: white;
   text-align: center;
+  padding: 2rem 2rem;
+  width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.container {
-  border: 1px solid red;
+.fdbck-container h1 {
+  font-size: 60px;
+  margin-block: 2rem;
+}
+
+.fdbck-container p {
+  font-size: 25px;
+  margin-block: 1rem;
+  line-height: 2rem;
+}
+
+.fdbck-stars {
+  margin-block: 2rem 5rem;
+}
+
+.fdbck-stars svg:nth-child(-n + 7) {
+  width: 40px;
+  margin-inline: 0.25rem;
+  fill: #00ffff;
+}
+
+.fdbck-stars svg:nth-child(n + 7) {
+  width: 40px;
+  margin-inline: 0.25rem;
+  fill: #0c113b;
+}
+
+.fdbck-input {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #d20094;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  margin-block: 1.5rem 3rem;
+  outline: none;
   color: white;
 }
