@@ -21,13 +21,13 @@
         <!-- LEFT -->
         <div class="result-correct">
           <h2>Correct</h2>
-          <h3>50%</h3>
-          <p>3/4 questions</p>
+          <h3 id="correct-perc">50%</h3>
+          <p><span id="correct-numb">2</span>/10 questions</p>
         </div>
 
         <!-- CENTER-->
         <div class="result-big-circle">
-          <div class="result-circled-text">
+          <div class="result-circled-text" id="result-text">
             <h4>Congratulations!</h4>
             <h3>You passed the exam.</h3>
             <p>We'll send you the certificate in few minutes. <br />Check your email (including promotions / spam folder)</p>
@@ -36,14 +36,16 @@
 
         <!-- RIGHT -->
         <div class="result-wrong">
-          <h2>Wrong</h2>
-          <h3>50%</h3>
-          <p>1/4 questions</p>
+          <h2 id="">Wrong</h2>
+          <h3 id="wrong-perc">50%</h3>
+          <p><span id="wrong-numb">1</span>/10 questions</p>
         </div>
       </article>
     </main>
     <footer>
       <button>RATE US</button>
     </footer>
+
+    <script src="./JS/result.js"></script>
   </body>
 </html>

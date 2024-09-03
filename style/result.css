@@ -51,7 +51,7 @@ h1 {
   left: 0;
   right: 0;
   border-radius: 50%;
-  background-image: conic-gradient(#00ffff 0% 30%, #c2128d 0% 100%);
+  background-image: conic-gradient(#00ffff 0% var(--gradient-perc, 30%), #c2128d var(--gradient-perc, 30%) 100%);
   mask: radial-gradient(farthest-side, transparent 70%, black 70%);
   z-index: 1;
 }
