@@ -39,7 +39,8 @@ body {
 }
 .question-option {
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid;
+  border-color: 3px #fff;
   border-radius: 500px;
   padding: 20px 80px;
   font-size: 16px;
@@ -47,6 +48,7 @@ body {
   cursor: pointer;
   transition: background 0.3s ease, border 0.3s ease;
   white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .question-option:hover,
