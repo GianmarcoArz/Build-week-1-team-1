@@ -80,6 +80,7 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"]
   }
 ];
+let score = 0;
 // MESCOLO DOM IN MODO CASUALE
 shuffleArray(questions);
 
@@ -123,7 +124,7 @@ function showQuestion() {
     const button = document.createElement("button");
     button.classList.add("question-option");
     button.innerText = answer; // IMPOSTO IL TESTO DEL PULSANTE COME RISPOSTA
-    button.onclick = () => handleAnswer(answer); // Aggiunge l'evento click che gestisce la selezione della risposta
+    button.onclick = (e) => handleAnswer(e, answer); // Aggiunge l'evento click che gestisce la selezione della risposta, con la e mi torna tutto ciò che sta dentro l'evento
     optionsContainer.appendChild(button);
   });
 
@@ -133,7 +134,13 @@ function showQuestion() {
 }
 
 // Funzione che gestisce la selezione di una risposta
-function handleAnswer(selectedAnswer) {
+function handleAnswer(e, selectedAnswer) {
+  console.log(e.target.innerText);
+  let selected = e.target.innerText;
+  if (selected === questions[currentQuestionIndex].correct_answer) {
+    score++;
+  }
+  console.log(score);
   // Passa alla prossima domanda incrementando l'indice
   currentQuestionIndex++;
 
@@ -143,6 +150,8 @@ function handleAnswer(selectedAnswer) {
   } else {
     // Attendo qualche secondo e poi vado alla pagina dei risultati
     setTimeout(() => {
+      sessionStorage.setItem("score", score);
+      sessionStorage.setItem("totalQuestions", questions.length);
       window.location.href = "result.html"; // VADO SU RESULT PAGINA
     }, 3000); // 3 SEC E REINDERIZZO
   }
