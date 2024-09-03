@@ -1,5 +1,5 @@
 main {
-  margin-top: 50px;
+  margin-top: 10px;
   color: #e7e7eb;
 }
 h1,
@@ -37,41 +37,43 @@ h1 {
 /*-- Making circle --*/
 .result-big-circle {
   margin-top: -100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  width: 330px;
-  height: 330px;
+  margin-inline: auto;
+  height: 400px;
+  width: 400px;
   border-radius: 50%;
-  background: conic-gradient(#00ffff 0% 30%, #c2128d 30% 100%);
 }
-.result-circled-small {
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  background-color: #0e113c;
+.result-big-circle::before {
+  content: "";
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  background-image: conic-gradient(#00ffff 0% 30%, #c2128d 0% 100%);
+  mask: radial-gradient(farthest-side, transparent 70%, black 70%);
+  z-index: 1;
 }
 .result-circled-text {
-  margin-top: 50px;
   text-align: center;
-  padding-inline: 10px;
+  position: absolute;
+  top: 8rem;
+  padding-inline: 70px;
 }
 .result-circled-text h4 {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
 }
 .result-circled-text h3 {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 23px;
   color: #02d4db;
 }
 .result-circled-text p {
   font-weight: 200;
-  font-size: 14px;
+  font-size: 18px;
   margin-top: 20px;
-  text-align: center;
 }
 
 /*-- RIGHT --*/
@@ -86,11 +88,15 @@ footer {
   text-align: center;
 }
 footer button {
-  width: 13rem;
-  font-size: 16px;
+  width: 15rem;
+  font-size: 20px;
   font-weight: 600;
   color: #e7e7eb;
   background-color: transparent;
   padding: 20px;
   border: 2px solid #fff;
+  cursor: pointer;
+}
+footer button:hover {
+  opacity: 0.8;
 }
