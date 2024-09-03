@@ -46,7 +46,7 @@ body {
   font-size: 16px;
   color: #fff;
   cursor: pointer;
-  transition: background 0.3s ease, border 0.3s ease;
+  transition: background 0.3s ease, border 0.3s ease, background-color 0.3s ease;
   white-space: nowrap;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }

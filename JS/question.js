@@ -135,18 +135,37 @@ function showQuestion() {
 
 // Funzione che gestisce la selezione di una risposta
 function handleAnswer(e, selectedAnswer) {
-  console.log(e.target.innerText);
-  let selected = e.target.innerText;
-  if (selected === questions[currentQuestionIndex].correct_answer) {
+  const selectedButton = e.target;
+  const isCorrect = selectedAnswer === questions[currentQuestionIndex].correct_answer;
+
+  if (isCorrect) {
+    selectedButton.style.backgroundColor = "#00ff00"; // Colore verde per risposta corretta
+  } else {
+    selectedButton.style.backgroundColor = "#ff0000"; // Colore rosso per risposta sbagliata
+  }
+
+  // Disabilita tutti i pulsanti per impedire ulteriori clic
+  const buttons = document.querySelectorAll(".question-option");
+  buttons.forEach((button) => {
+    button.disabled = true;
+    if (button.innerText === questions[currentQuestionIndex].correct_answer) {
+      button.style.backgroundColor = "#00ff00"; // Colore verde per la risposta corretta
+    }
+  });
+
+  // Aggiorna il punteggio se la risposta è corretta
+  if (isCorrect) {
     score++;
   }
-  console.log(score);
+
   // Passa alla prossima domanda incrementando l'indice
   currentQuestionIndex++;
 
   // Se ci sono altre domande, visualizza la prossima domanda, altrimenti reindirizza alla pagina dei risultati
   if (currentQuestionIndex < questions.length) {
-    showQuestion(); // Mostra la prossima domanda
+    setTimeout(() => {
+      showQuestion();
+    }, 3000); // 3 SEC E REINDERIZZO
   } else {
     // Attendo qualche secondo e poi vado alla pagina dei risultati
     setTimeout(() => {
