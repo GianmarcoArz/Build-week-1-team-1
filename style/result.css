@@ -1,0 +1,102 @@
+main {
+  margin-top: 10px;
+  color: #e7e7eb;
+}
+h1,
+.result-subtitle {
+  text-align: center;
+}
+h1 {
+  font-weight: 600;
+  font-size: 60px;
+}
+.result-subtitle {
+  font-size: 25px;
+  font-weight: 350;
+  margin-top: 5px;
+}
+
+/*-- CONTENT --*/
+
+.result-content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 170px;
+}
+.result-content h2 {
+  font-weight: 300;
+  font-size: 50px;
+}
+.result-content h3 {
+  font-weight: 600;
+  font-size: 50px;
+}
+
+/*-- CENTER --*/
+
+/*-- Making circle --*/
+.result-big-circle {
+  margin-top: -100px;
+  position: relative;
+  margin-inline: auto;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+}
+.result-big-circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  background-image: conic-gradient(#00ffff 0% 30%, #c2128d 0% 100%);
+  mask: radial-gradient(farthest-side, transparent 70%, black 70%);
+  z-index: 1;
+}
+.result-circled-text {
+  text-align: center;
+  position: absolute;
+  top: 8rem;
+  padding-inline: 70px;
+}
+.result-circled-text h4 {
+  font-weight: 600;
+  font-size: 20px;
+}
+.result-circled-text h3 {
+  font-weight: 600;
+  font-size: 23px;
+  color: #02d4db;
+}
+.result-circled-text p {
+  font-weight: 200;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/*-- RIGHT --*/
+.result-wrong {
+  text-align: right;
+}
+
+/*-- FOOTER --*/
+
+footer {
+  margin-top: 100px;
+  text-align: center;
+}
+footer button {
+  width: 15rem;
+  font-size: 20px;
+  font-weight: 600;
+  color: #e7e7eb;
+  background-color: transparent;
+  padding: 20px;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+footer button:hover {
+  opacity: 0.8;
+}
