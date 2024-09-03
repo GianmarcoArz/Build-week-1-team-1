@@ -32,19 +32,24 @@
           Changing browser tab or opening other windows will
           <b class="welcomeb">invalidate the question.</b>
         </li>
-        <li>This exam will take approx.<b class="welcomeb">0-5 minutes</b></li>
+        <li>
+          This exam will take approx.<b class="welcomeb" type="submit"
+            >0-5 minutes</b
+          >
+        </li>
       </ul>
-      <div class="welcomeimput">
+      <form action="" class="welcomeimput" id="welcomeButton">
         <label class="welcomebox"
-          ><input type="checkbox" /><span class="welcomemark"></span
+          ><input type="checkbox" required /><span class="welcomemark"></span
         ></label>
         <p>
           <b class="welcomeb"
             >I promise to answer myself without help from anyone</b
           >
         </p>
-        <button class="button">PROCEED</button>
-      </div>
+        <button class="button" id="prcedbutton">PROCEED</button>
+      </form>
     </div>
+    <script src="./JS/script.js"></script>
   </body>
 </html>
