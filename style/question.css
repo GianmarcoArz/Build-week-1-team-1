@@ -39,8 +39,6 @@ body {
 }
 .question-option {
   background: transparent;
-  border: 2px solid;
-  border-color: 3px #fff;
   border-radius: 500px;
   padding: 20px 80px;
   font-size: 16px;
@@ -48,6 +46,8 @@ body {
   cursor: pointer;
   transition: background 0.3s ease, border 0.3s ease, background-color 0.3s ease;
   white-space: nowrap;
+  border-color: transparent;
+  box-shadow: 2px -1.8px 3px 0.6px #fff, -2px -1.8px 3px 0.6px #fff;
 }
 
 .question-option:hover,
@@ -77,6 +77,7 @@ body {
   display: inline-block;
   vertical-align: top;
   margin-left: 70%;
+  box-shadow: 0 0 30px 0px rgba(0, 0, 0, 1), inset 0 0 40px 0px rgba(0, 0, 0, 1);
 }
 .timer-big-circle::before {
   content: "";
@@ -95,6 +96,9 @@ body {
   position: absolute;
   padding-inline: 70px;
   display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .timer-text h4 {
   font-weight: 600;
