@@ -92,7 +92,24 @@ const startTimer = () => {
 
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
-      showQuestion();
+
+      if (currentQuestionIndex + 1 < questions.length) {
+        setTimeout(() => {
+          clearInterval(timerInterval);
+          showQuestion();
+          console.log(currentQuestionIndex, questions.length);
+          currentQuestionIndex++;
+          let questionNumbers = document.getElementById("questionNumbers");
+          questionNumbers.innerText = currentQuestionIndex + 1;
+        }, 1000); // 1 SEC E REINDERIZZO
+      } else {
+        // Attendo qualche secondo e poi vado alla pagina dei risultati
+        setTimeout(() => {
+          sessionStorage.setItem("score", score);
+          sessionStorage.setItem("totalQuestions", questions.length);
+          window.location.href = "result.html"; // VADO SU RESULT PAGINA
+        }, 2000); // 2 SEC E REINDERIZZO
+      }
     }
   }, 1000);
 };
