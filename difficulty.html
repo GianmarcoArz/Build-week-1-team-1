@@ -13,15 +13,18 @@
     <header>
       <img src="./assets/epicode_logo.png" alt="Logo Epicode" class="logo" />
     </header>
-    <h1 class="difficultytitle">SCEGLI LA DIFFICOLTA !</h1>
+    <h1 class="difficultytitle">Choose the difficulty!</h1>
     <div class="difficultybox">
       <button>EASY</button>
       <button>NORMAL</button>
-      <button>HARD</button>
+      <button>HARD</button> <br />
+      <button>CASUAL</button>
     </div>
     <div>
-      <h3 class="difficultyh3">Quante domande vuoi ricevere ?</h3>
-      <input class="difficultyinput" type="number" name="domande" id="numerodidomande" placeholder="1-50" />
+      <h3 class="difficultyh3">How many questions do you want?</h3>
+      <button class="difficultyplus" style="font-size: 42px">-</button>
+      <input class="difficultyinput" type="number" name="domande" id="numerodidomande" placeholder="1-30" />
+      <button class="difficultyplus">+</button>
     </div>
     <script src="JS/difficulty.js"></script>
   </body>

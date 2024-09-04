@@ -41,7 +41,7 @@ header {
   background: linear-gradient(90deg, #d20094, #900080);
   border: 2px solid #d20094;
   color: #fff;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .difficultyh3 {
@@ -72,4 +72,20 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.difficultyplus {
+  background: transparent;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, border 0.3s ease, background-color 0.3s ease;
+  white-space: nowrap;
+  border-color: transparent;
+  margin-inline: 1rem;
+  margin-block: 1rem;
+  font-size: 30px;
+  font-weight: 900;
 }
