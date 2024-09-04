@@ -28,10 +28,11 @@
 
 .fdbck-stars svg {
   width: 40px;
-  margin-inline: 0.25rem;
+  padding-inline: 0.25rem;
   fill: #0c113b;
   filter: drop-shadow(0px 0px 3px #00ffff);
   cursor: pointer;
+  margin-inline: 0;
 }
 
 .fdbck-stars svg:hover {
@@ -40,8 +41,9 @@
 
 .fdbck-stars svg.selected {
   width: 40px;
-  margin-inline: 0.25rem;
+  padding-inline: 0.25rem;
   fill: #00ffff;
+  margin-inline: 0;
 }
 
 .fdbck-input {
