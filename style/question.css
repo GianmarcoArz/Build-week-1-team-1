@@ -69,3 +69,44 @@ body {
 .question-footer .question-highlight {
   color: #d20094;
 }
+.timer-big-circle {
+  position: relative;
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 70%;
+}
+.timer-big-circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  background-image: conic-gradient(rgba(0, 255, 255, 0.1) 0% var(--gradient-perc, 0%), #00ffff var(--gradient-perc, 0%) 100%);
+  mask: radial-gradient(farthest-side, transparent 70%, black 70%);
+  z-index: 1;
+}
+.timer-text {
+  text-align: center;
+  position: absolute;
+  top: 8rem;
+  padding-inline: 70px;
+}
+.timer-text h4 {
+  font-weight: 600;
+  font-size: 20px;
+}
+.timer-text h3 {
+  font-weight: 600;
+  font-size: 23px;
+  color: #02d4db;
+}
+.timer-text p {
+  font-weight: 200;
+  font-size: 18px;
+  margin-top: 20px;
+}
