@@ -98,5 +98,15 @@ h6 {
 }
 
 .welcomebox {
-  margin-right: 1rem;
+  margin-right: 0.5rem;
+  color: #4c4c4c;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+  background-color: #0c20b7;
+  border-radius: 5px;
+  cursor: pointer;
 }
