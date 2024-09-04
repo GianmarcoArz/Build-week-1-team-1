@@ -6,7 +6,7 @@ header {
   text-align: start;
 }
 
-.difficoltatitle {
+.difficultytitle {
   font-size: 60px;
   font-family: "Outfit" sans-serif;
   text-align: center;
@@ -15,12 +15,12 @@ header {
   color: white;
 }
 
-.difficoltabox {
+.difficultybox {
   display: inline-block;
   padding-top: 3rem;
 }
 
-.difficoltabox button {
+.difficultybox button {
   background: transparent;
   border-radius: 500px;
   padding: 20px 80px;
@@ -36,15 +36,15 @@ header {
   font-size: 30px;
   font-weight: 400;
 }
-.difficoltabox button:hover,
-.difficoltabox button:focus {
+.difficultybox button:hover,
+.difficultybox button:focus {
   background: linear-gradient(90deg, #d20094, #900080);
   border: 2px solid #d20094;
   color: #fff;
   font-weight: 700;
 }
 
-.difficoltah3 {
+.difficultyh3 {
   font-size: 35px;
   font-family: "inter" sans-serif;
   text-align: center;
@@ -53,7 +53,7 @@ header {
   color: white;
 }
 
-.difficoltainput {
+.difficultyinput {
   text-align: center;
   margin-top: 2.5rem;
   font-family: "Outfit", sans-serif;
