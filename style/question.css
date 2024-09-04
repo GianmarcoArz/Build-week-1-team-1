@@ -87,26 +87,25 @@ body {
   right: 0;
   border-radius: 50%;
   background-image: conic-gradient(rgba(0, 255, 255, 0.1) 0% var(--gradient-perc, 0%), #00ffff var(--gradient-perc, 0%) 100%);
-  mask: radial-gradient(farthest-side, transparent 70%, black 70%);
+  mask: radial-gradient(farthest-side, transparent 75%, black 75%);
   z-index: 1;
 }
 .timer-text {
   text-align: center;
   position: absolute;
-  top: 8rem;
   padding-inline: 70px;
+  display: inline-block;
 }
 .timer-text h4 {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 8px;
 }
 .timer-text h3 {
-  font-weight: 600;
-  font-size: 23px;
-  color: #02d4db;
+  font-weight: 300;
+  font-size: 40px;
+  color: #fff;
 }
 .timer-text p {
   font-weight: 200;
-  font-size: 18px;
-  margin-top: 20px;
+  font-size: 8px;
 }
