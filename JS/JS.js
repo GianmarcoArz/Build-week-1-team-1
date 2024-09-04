@@ -80,22 +80,6 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"]
   }
 ];
-let score = 0;
-let timeLeft = 30;
-let timerInterval;
-
-const startTimer = () => {
-  timeLeft = 31;
-  timerInterval = setInterval(() => {
-    timeLeft--;
-    document.querySelector("#time h3").textContent = timeLeft;
-
-    if (timeLeft <= 0) {
-      clearInterval(timerInterval);
-      showQuestion();
-    }
-  }, 1000);
-};
 // MESCOLO DOM IN MODO CASUALE
 shuffleArray(questions);
 
@@ -117,7 +101,6 @@ function shuffleArray(array) {
 
 // QUESTA E' LA FUNZIONE PER VISUALIZZARE LA DOMANDA CORRENTE
 function showQuestion() {
-  startTimer();
   const questionContainer = document.querySelector(".question");
 
   const optionsContainer = document.querySelector(".question-options");
@@ -140,54 +123,26 @@ function showQuestion() {
     const button = document.createElement("button");
     button.classList.add("question-option");
     button.innerText = answer; // IMPOSTO IL TESTO DEL PULSANTE COME RISPOSTA
-    button.onclick = (e) => handleAnswer(e, answer); // Aggiunge l'evento click che gestisce la selezione della risposta, con la e mi torna tutto ciò che sta dentro l'evento
+    button.onclick = () => handleAnswer(answer); // Aggiunge l'evento click che gestisce la selezione della risposta
     optionsContainer.appendChild(button);
   });
 
   // COSì AGGIORNO IL NUMERO DELLA DOMANDA CORRENTE
-  let questionNumbers = document.getElementById("questionNumbers");
-  questionNumbers.innerText = currentQuestionIndex + 1;
+  questionNumberElement.innerText = currentQuestionIndex + 1;
 }
 
 // Funzione che gestisce la selezione di una risposta
-function handleAnswer(e, selectedAnswer) {
-  const selectedButton = e.target;
-  const isCorrect = selectedAnswer === questions[currentQuestionIndex].correct_answer;
-
-  if (isCorrect) {
-    selectedButton.style.backgroundColor = "#00ff00"; // VERDE CORRETTO
-  } else {
-    selectedButton.style.backgroundColor = "#ff0000"; // ROSSO SBAGLIATO
-  }
-
-  // Disabilita tutti i pulsanti per impedire ulteriori clic
-  const buttons = document.querySelectorAll(".question-option");
-  buttons.forEach((button) => {
-    button.disabled = true;
-    if (button.innerText === questions[currentQuestionIndex].correct_answer) {
-      button.style.backgroundColor = "#00ff00"; // Colore verde per la risposta corretta
-    }
-  });
-
-  // Aggiorna il punteggio se la risposta è corretta
-  if (isCorrect) {
-    score++;
-  }
-
+function handleAnswer(selectedAnswer) {
   // Passa alla prossima domanda incrementando l'indice
   currentQuestionIndex++;
+
   // Se ci sono altre domande, visualizza la prossima domanda, altrimenti reindirizza alla pagina dei risultati
   if (currentQuestionIndex < questions.length) {
-    setTimeout(() => {
-      clearInterval(timerInterval);
-      showQuestion();
-    }, 1000); // 1 SEC E REINDERIZZO
+    showQuestion(); // Mostra la prossima domanda
   } else {
     // Attendo qualche secondo e poi vado alla pagina dei risultati
     setTimeout(() => {
-      sessionStorage.setItem("score", score);
-      sessionStorage.setItem("totalQuestions", questions.length);
       window.location.href = "result.html"; // VADO SU RESULT PAGINA
-    }, 2000); // 2 SEC E REINDERIZZO
+    }, 3000); // 3 SEC E REINDERIZZO
   }
 }
