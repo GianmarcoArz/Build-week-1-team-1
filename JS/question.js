@@ -81,6 +81,21 @@ const questions = [
   }
 ];
 let score = 0;
+let timeLeft = 30;
+let timerInterval;
+
+const startTimer = () => {
+  timeLeft = 31;
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    document.querySelector("#time h3").textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      showQuestion();
+    }
+  }, 1000);
+};
 // MESCOLO DOM IN MODO CASUALE
 shuffleArray(questions);
 
@@ -102,6 +117,7 @@ function shuffleArray(array) {
 
 // QUESTA E' LA FUNZIONE PER VISUALIZZARE LA DOMANDA CORRENTE
 function showQuestion() {
+  startTimer();
   const questionContainer = document.querySelector(".question");
 
   const optionsContainer = document.querySelector(".question-options");
@@ -139,9 +155,9 @@ function handleAnswer(e, selectedAnswer) {
   const isCorrect = selectedAnswer === questions[currentQuestionIndex].correct_answer;
 
   if (isCorrect) {
-    selectedButton.style.backgroundColor = "#00ff00"; // Colore verde per risposta corretta
+    selectedButton.style.backgroundColor = "#00ff00"; // VERDE CORRETTO
   } else {
-    selectedButton.style.backgroundColor = "#ff0000"; // Colore rosso per risposta sbagliata
+    selectedButton.style.backgroundColor = "#ff0000"; // ROSSO SBAGLIATO
   }
 
   // Disabilita tutti i pulsanti per impedire ulteriori clic
@@ -160,10 +176,10 @@ function handleAnswer(e, selectedAnswer) {
 
   // Passa alla prossima domanda incrementando l'indice
   currentQuestionIndex++;
-
   // Se ci sono altre domande, visualizza la prossima domanda, altrimenti reindirizza alla pagina dei risultati
   if (currentQuestionIndex < questions.length) {
     setTimeout(() => {
+      clearInterval(timerInterval);
       showQuestion();
     }, 1000); // 1 SEC E REINDERIZZO
   } else {
