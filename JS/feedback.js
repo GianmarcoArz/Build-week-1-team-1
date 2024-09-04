@@ -39,3 +39,16 @@ stars.forEach((star) => {
     });
   });
 });
+
+const feedbackInput = document.querySelector(".fdbck-input");
+const feedbackButton = document.getElementById("fdbck-button");
+
+feedbackButton.onclick = () => {
+  let inputText = feedbackInput.value;
+  if (inputText === "") {
+    alert("please leave your feedback");
+  } else {
+    alert(`Grazie per la tua valutazione da ${currentRating} stella/e!
+  E per aver lasciato il tuo commento!`);
+  }
+};
