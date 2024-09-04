@@ -165,13 +165,13 @@ function handleAnswer(e, selectedAnswer) {
   if (currentQuestionIndex < questions.length) {
     setTimeout(() => {
       showQuestion();
-    }, 3000); // 3 SEC E REINDERIZZO
+    }, 1000); // 1 SEC E REINDERIZZO
   } else {
     // Attendo qualche secondo e poi vado alla pagina dei risultati
     setTimeout(() => {
       sessionStorage.setItem("score", score);
       sessionStorage.setItem("totalQuestions", questions.length);
       window.location.href = "result.html"; // VADO SU RESULT PAGINA
-    }, 3000); // 3 SEC E REINDERIZZO
+    }, 2000); // 2 SEC E REINDERIZZO
   }
 }
