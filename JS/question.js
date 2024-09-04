@@ -86,7 +86,7 @@ let timerInterval;
 let totalTime = 30;
 
 const startTimer = () => {
-  timeLeft = 30;
+  timeLeft = 31;
   timerInterval = setInterval(() => {
     timeLeft--;
     document.querySelector("#time h3").textContent = timeLeft;
@@ -182,17 +182,18 @@ function handleAnswer(e, selectedAnswer) {
   const isCorrect = selectedAnswer === questions[currentQuestionIndex].correct_answer;
 
   if (isCorrect) {
-    selectedButton.style.backgroundColor = "#00ff00"; // VERDE CORRETTO
+    selectedButton.style.backgroundColor = "#47bc27"; // VERDE CORRETTO
   } else {
-    selectedButton.style.backgroundColor = "#ff0000"; // ROSSO SBAGLIATO
+    selectedButton.style.backgroundColor = "#bb1616"; // ROSSO SBAGLIATO
   }
 
   // Disabilita tutti i pulsanti per impedire ulteriori clic
   const buttons = document.querySelectorAll(".question-option");
   buttons.forEach((button) => {
     button.disabled = true;
+    button.style.pointerEvents = "none";
     if (button.innerText === questions[currentQuestionIndex].correct_answer) {
-      button.style.backgroundColor = "#00ff00"; // Colore verde per la risposta corretta
+      button.style.backgroundColor = "#47bc27"; // Colore verde per la risposta corretta
     }
   });
 
