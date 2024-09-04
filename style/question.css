@@ -87,7 +87,7 @@ body {
   left: 0;
   right: 0;
   border-radius: 50%;
-  background-image: conic-gradient(rgba(0, 255, 255, 0.1) 0% var(--gradient-perc, 0%), #00ffff var(--gradient-perc, 0%) 100%);
+  background-image: conic-gradient(rgba(0, 255, 255, 0.1) 0% var(--gradient-perc, 0%), #00ffff 0% 100%);
   mask: radial-gradient(farthest-side, transparent 75%, black 75%);
   z-index: 1;
 }
