@@ -100,6 +100,16 @@ const startTimer = () => {
     let timeLeftPercInvers = 100 - timeLeftPerc + 1;
     //30(totalTime):100(100%) = 30(timeLeft):x
     let donutChart = document.querySelector(".timer-big-circle");
+    if (timeLeft <= 5) {
+      donutChart.style.setProperty("--gradient-color", "#ff0000");
+      donutChart.style.setProperty("--countdown-color", "#ff0000"); //RED 5 SECONDI
+    } else if (timeLeft <= 10) {
+      donutChart.style.setProperty("--gradient-color", "#ffa500");
+      donutChart.style.setProperty("--countdown-color", "#ffa500"); // ORANGE 10 SEC
+    } else {
+      donutChart.style.setProperty("--gradient-color", "#00ffff");
+      donutChart.style.setProperty("--countdown-color", "#fff"); // NORMALE DA 30 A 10 SEC
+    }
 
     //Si crea una variabile su CSS
 
@@ -116,14 +126,14 @@ const startTimer = () => {
           currentQuestionIndex++;
           let questionNumbers = document.getElementById("questionNumbers");
           questionNumbers.innerText = currentQuestionIndex + 1;
-        }, 1000); // 1 SEC E REINDERIZZO
+        }, 500); // 1 SEC E REINDERIZZO
       } else {
         // Attendo qualche secondo e poi vado alla pagina dei risultati
         setTimeout(() => {
           sessionStorage.setItem("score", score);
           sessionStorage.setItem("totalQuestions", questions.length);
           window.location.href = "result.html"; // VADO SU RESULT PAGINA
-        }, 2000); // 2 SEC E REINDERIZZO
+        }, 500); // 2 SEC E REINDERIZZO
       }
     }
   }, 1000);
@@ -164,10 +174,7 @@ function showQuestion() {
   optionsContainer.innerHTML = "";
 
   // Combina le risposte CORRETTE e INCORRETTE in un unico array e LE MESCOLO.
-  const answers = [
-    ...currentQuestion.incorrect_answers,
-    currentQuestion.correct_answer,
-  ];
+  const answers = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer];
   answers.sort(() => Math.random() - 0.5); // COSì MESCOLO LE OPZIONI A CASO
 
   // CREO UN PULSANTE PER OGNI RISPOSTA E AGGIUNGO L'EVENTO CLICK
@@ -187,8 +194,7 @@ function showQuestion() {
 // Funzione che gestisce la selezione di una risposta
 function handleAnswer(e, selectedAnswer) {
   const selectedButton = e.target;
-  const isCorrect =
-    selectedAnswer === questions[currentQuestionIndex].correct_answer;
+  const isCorrect = selectedAnswer === questions[currentQuestionIndex].correct_answer;
 
   if (isCorrect) {
     selectedButton.style.backgroundColor = "#47bc27"; // VERDE CORRETTO
@@ -218,13 +224,13 @@ function handleAnswer(e, selectedAnswer) {
     setTimeout(() => {
       clearInterval(timerInterval);
       showQuestion();
-    }, 1000); // 1 SEC E REINDERIZZO
+    }, 500); // 1 SEC E REINDERIZZO
   } else {
     // Attendo qualche secondo e poi vado alla pagina dei risultati
     setTimeout(() => {
       sessionStorage.setItem("score", score);
       sessionStorage.setItem("totalQuestions", questions.length);
       window.location.href = "result.html"; // VADO SU RESULT PAGINA
-    }, 2000); // 2 SEC E REINDERIZZO
+    }, 1000); // 2 SEC E REINDERIZZO
   }
 }
