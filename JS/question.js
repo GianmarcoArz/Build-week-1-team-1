@@ -126,17 +126,17 @@ const startTimer = () => {
           currentQuestionIndex++;
           let questionNumbers = document.getElementById("questionNumbers");
           questionNumbers.innerText = currentQuestionIndex + 1;
-        }, 500); // 1 SEC E REINDERIZZO
+        }, 500); // 1/2 SEC E REINDERIZZO
       } else {
         // Attendo qualche secondo e poi vado alla pagina dei risultati
         setTimeout(() => {
           sessionStorage.setItem("score", score);
           sessionStorage.setItem("totalQuestions", questions.length);
           window.location.href = "result.html"; // VADO SU RESULT PAGINA
-        }, 500); // 2 SEC E REINDERIZZO
+        }, 500); // 1/2 SEC E REINDERIZZO
       }
     }
-  }, 1000);
+  }, 1000); //1 sec
 };
 // MESCOLO DOM IN MODO CASUALE
 shuffleArray(questions);
@@ -159,6 +159,8 @@ function shuffleArray(array) {
 
 // QUESTA E' LA FUNZIONE PER VISUALIZZARE LA DOMANDA CORRENTE
 function showQuestion() {
+  const totalQuestionNumber = document.getElementById("totalQuestionNumber");
+  totalQuestionNumber.innerText = questions.length;
   startTimer();
   const questionContainer = document.querySelector(".question");
 
@@ -224,13 +226,13 @@ function handleAnswer(e, selectedAnswer) {
     setTimeout(() => {
       clearInterval(timerInterval);
       showQuestion();
-    }, 500); // 1 SEC E REINDERIZZO
+    }, 500); // 1/2 SEC E REINDERIZZO
   } else {
     // Attendo qualche secondo e poi vado alla pagina dei risultati
     setTimeout(() => {
       sessionStorage.setItem("score", score);
       sessionStorage.setItem("totalQuestions", questions.length);
       window.location.href = "result.html"; // VADO SU RESULT PAGINA
-    }, 1000); // 2 SEC E REINDERIZZO
+    }, 1000); // 1 SEC E REINDERIZZO
   }
 }

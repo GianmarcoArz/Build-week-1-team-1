@@ -10,11 +10,12 @@ const wrongNumb = document.getElementById("wrong-numb");
 let scorePerc = (score / questionLength) * 100;
 let wrongScorePerc = ((questionLength - score) / questionLength) * 100;
 
-correctPerc.innerText = scorePerc + " %";
+correctPerc.innerText = Math.ceil(scorePerc) + " %";
 correctNumb.innerText = score;
-wrongPerc.innerText = wrongScorePerc + " %";
+wrongPerc.innerText = Math.ceil(wrongScorePerc) + " %";
 wrongNumb.innerText = questionLength - score;
-
+const totalQuestionNumber = document.querySelectorAll(".questionLength");
+totalQuestionNumber.forEach((span) => (span.innerText = questionLength));
 function changeText() {
   const resultText = document.getElementById("result-text");
 

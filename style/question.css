@@ -64,7 +64,7 @@ body {
 
 .question-footer {
   margin-top: 90px;
-  font-size: 14px;
+  font-size: 16px;
   clear: both;
 }
 
@@ -73,6 +73,7 @@ body {
 }
 .question-footer .question-highlight {
   color: #d20094;
+  font-size: 17px;
 }
 .timer-big-circle {
   position: relative;
