@@ -20,15 +20,14 @@ function changeText() {
   const resultText = document.getElementById("result-text");
 
   if ((score / questionLength) * 100 < 60) {
-    resultText.innerHTML = `<h4>Sorry, retry the exam!!!</h4>
-            <h3 style="color: #d20094; margin-top: 10px">You didn't pass the exam.</h3>`;
-    resultText.style.marginTop = "50px";
+    resultText.innerHTML = `<h4 style="margin-bottom: 20px;">Sorry,retry the exam!!!</h4>
+            <h3 style="color: #d20094;">You didn't pass the exam.</h3>`;
   }
 }
 
 changeText();
 
-const rateBtn = document.querySelector("button");
+const rateBtn = document.getElementById("rateBtn");
 
 rateBtn.onclick = () => {
   window.location.href = "../feedback.html";

@@ -131,9 +131,9 @@ const startTimer = () => {
       if (currentQuestionIndex + 1 < questions.length) {
         setTimeout(() => {
           clearInterval(timerInterval);
+          currentQuestionIndex++;
           showQuestion();
           console.log(currentQuestionIndex, questions.length);
-          currentQuestionIndex++;
           let questionNumbers = document.getElementById("questionNumbers");
           questionNumbers.innerText = currentQuestionIndex + 1;
         }, 500); // 1/2 SEC E REINDERIZZO

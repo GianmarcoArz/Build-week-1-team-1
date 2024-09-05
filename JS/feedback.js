@@ -53,5 +53,13 @@ feedbackButton.onclick = (event) => {
     const fdbk2 = document.getElementById("fdbckFinal");
     fdbk1.style.display = "none";
     fdbk2.style.display = "block";
+    const ratingText = document.querySelector("#fdbckFinal p");
+    if (currentRating < 6) {
+      ratingText.innerText = "We're Sorry for your Bad Experience.";
+    } else if (currentRating < 8) {
+      ratingText.innerText = "Thank you for your positive Feedback.";
+    } else {
+      ratingText.innerText = "We're very Grateful for your Feedback.";
+    }
   }
 };

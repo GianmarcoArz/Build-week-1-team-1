@@ -83,7 +83,8 @@ body {
   display: inline-block;
   vertical-align: top;
   margin-left: 70%;
-  box-shadow: 0 0 30px 0px rgba(0, 0, 0, 1), inset 0 0 40px 0px rgba(0, 0, 0, 1);
+  /*box-shadow: 0 0 30px 0px rgba(0, 0, 0, 1), inset 0 0 40px 0px rgba(0, 0, 0, 1);*/
+  filter: drop-shadow(0px 0px 20px #000b0b);
 }
 .timer-big-circle::before {
   content: "";
