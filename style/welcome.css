@@ -88,7 +88,8 @@ h6 {
 
 .welcomeimput {
   padding-top: 5rem;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
 .welcomeimput p {
@@ -104,10 +105,27 @@ h6 {
 }
 
 input[type="checkbox"] {
-  position: relative;
+  width: 20px;
+  height: 20px;
+  appearance: none; /* Rimuove lo stile predefinito */
+  background-color: transparent; /* Sfondo trasparente */
+  border: 3px solid #fff; /* Bordo personalizzato */
   cursor: pointer;
-  display: inline-flex;
+  padding: 10px;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Sfondo trasparente */
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✔"; /* Aggiunge un segno di spunta */
+  color: #fff; /* Colore del segno di spunta */
+  display: flex;
+  justify-content: center;
   align-items: center;
-  height: 22px;
-  color: white;
 }

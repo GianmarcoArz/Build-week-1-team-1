@@ -91,7 +91,17 @@ let timerInterval;
 let totalTime = 30;
 
 const startTimer = () => {
-  timeLeft = 31;
+  if (questions[currentQuestionIndex].difficulty === "easy") {
+    timeLeft = 30;
+    totalTime = 30;
+  } else if (questions[currentQuestionIndex].difficulty === "medium") {
+    timeLeft = 45;
+    totalTime = 45;
+  } else if (questions[currentQuestionIndex].difficulty === "hard") {
+    timeLeft = 60;
+    totalTime = 60;
+  }
+
   timerInterval = setInterval(() => {
     timeLeft--;
     document.querySelector("#time h3").textContent = timeLeft;
