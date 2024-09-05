@@ -43,12 +43,15 @@ stars.forEach((star) => {
 const feedbackInput = document.querySelector(".fdbck-input");
 const feedbackButton = document.getElementById("fdbck-button");
 
-feedbackButton.onclick = () => {
+feedbackButton.onclick = (event) => {
+  event.preventDefault();
   let inputText = feedbackInput.value;
   if (inputText === "") {
     alert("please leave your feedback");
   } else {
-    alert(`Grazie per la tua valutazione da ${currentRating} stella/e!
-  E per aver lasciato il tuo commento!`);
+    const fdbk1 = document.getElementById("fdbckComment");
+    const fdbk2 = document.getElementById("fdbckFinal");
+    fdbk1.style.display = "none";
+    fdbk2.style.display = "block";
   }
 };

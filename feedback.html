@@ -12,7 +12,7 @@
     <header>
       <a href="./Welcome.html"><img src="./assets/epicode_logo.png" alt="Logo Epicode" class="logo" /></a>
     </header>
-    <div class="fdbck-container">
+    <div class="fdbck-container" id="fdbckComment">
       <h1>Tell us how it's going</h1>
       <p>From 0 to 10, how likely are you to recommend EPICODE to a friend or a colleague?</p>
       <div class="fdbck-stars" id="fdbck-stars-container">
@@ -83,6 +83,12 @@
         <input class="fdbck-input" type="text" placeholder="Write your comment here" />
         <button id="fdbck-button" class="button">SUBMIT</button>
       </form>
+    </div>
+    <div class="fdbck-container" id="fdbckFinal">
+      <h1>Thank you for the feedback!</h1>
+      <p>We would treasure your opinion, for further clarifications and information visit our website listed below!</p>
+      <p id="hint">Our website ⬇</p>
+      <a href="https://epicode.com/it/" target="_blank"><button id="fdbck-button" class="button">EPICODE</button></a>
     </div>
     <script src="./JS/feedback.js"></script>
   </body>
