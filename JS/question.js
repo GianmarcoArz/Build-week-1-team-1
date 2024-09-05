@@ -1,4 +1,4 @@
-const questions = [
+/*const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
@@ -80,6 +80,11 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"]
   }
 ];
+*/
+const questJSON = sessionStorage.getItem("questions");
+
+const questions = JSON.parse(questJSON);
+console.log(questions);
 let score = 0;
 let timeLeft = 30;
 let timerInterval;
@@ -159,7 +164,10 @@ function showQuestion() {
   optionsContainer.innerHTML = "";
 
   // Combina le risposte CORRETTE e INCORRETTE in un unico array e LE MESCOLO.
-  const answers = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer];
+  const answers = [
+    ...currentQuestion.incorrect_answers,
+    currentQuestion.correct_answer,
+  ];
   answers.sort(() => Math.random() - 0.5); // COSì MESCOLO LE OPZIONI A CASO
 
   // CREO UN PULSANTE PER OGNI RISPOSTA E AGGIUNGO L'EVENTO CLICK
@@ -179,7 +187,8 @@ function showQuestion() {
 // Funzione che gestisce la selezione di una risposta
 function handleAnswer(e, selectedAnswer) {
   const selectedButton = e.target;
-  const isCorrect = selectedAnswer === questions[currentQuestionIndex].correct_answer;
+  const isCorrect =
+    selectedAnswer === questions[currentQuestionIndex].correct_answer;
 
   if (isCorrect) {
     selectedButton.style.backgroundColor = "#47bc27"; // VERDE CORRETTO

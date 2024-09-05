@@ -18,22 +18,28 @@
     </header>
     <h1 class="difficultytitle">Choose the difficulty!</h1>
     <div class="difficultybox">
-      <button>EASY</button>
-      <button>NORMAL</button>
-      <button>HARD</button> <br />
-      <button>CASUAL</button>
+      <button id="difficultyEasy">EASY</button>
+      <button id="difficultyNormal">NORMAL</button>
+      <button id="difficultyHard">HARD</button> <br />
+      <button id="difficultyCasual">CASUAL</button>
     </div>
     <div>
       <h3 class="difficultyh3">How many questions do you want?</h3>
-      <button class="difficultyplus" style="font-size: 42px">-</button>
+      <button
+        id="difficultyMinus"
+        class="difficultyplus"
+        style="font-size: 42px"
+      >
+        -
+      </button>
       <input
         class="difficultyinput"
         type="number"
         name="domande"
-        id="numerodidomande"
+        id="NumberQuestion"
         placeholder="1-30"
       />
-      <button class="difficultyplus">+</button>
+      <button id="difficultyPlus" class="difficultyplus">+</button>
     </div>
     <script src="JS/difficulty.js"></script>
   </body>
