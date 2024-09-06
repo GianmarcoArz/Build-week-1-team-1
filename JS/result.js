@@ -1,6 +1,7 @@
 const score = sessionStorage.getItem("score");
 console.log(score);
 const questionLength = sessionStorage.getItem("totalQuestions");
+const userAnswers = JSON.parse(sessionStorage.getItem("userAnswers"));
 
 let correctPerc = document.getElementById("correct-perc");
 let wrongPerc = document.getElementById("wrong-perc");
@@ -14,6 +15,7 @@ correctPerc.innerText = Math.ceil(scorePerc) + " %";
 correctNumb.innerText = score;
 wrongPerc.innerText = Math.ceil(wrongScorePerc) + " %";
 wrongNumb.innerText = questionLength - score;
+
 const totalQuestionNumber = document.querySelectorAll(".questionLength");
 totalQuestionNumber.forEach((span) => (span.innerText = questionLength));
 function changeText() {

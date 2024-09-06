@@ -89,7 +89,11 @@ let score = 0;
 let timeLeft = 30;
 let timerInterval;
 let totalTime = 30;
+const userAnswers = [];
 
+// function insertUserAnswers() {
+
+// }
 const startTimer = () => {
   if (questions[currentQuestionIndex].difficulty === "easy") {
     timeLeft = 30;
@@ -127,6 +131,14 @@ const startTimer = () => {
 
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
+      console.log(userAnswers);
+      userAnswers.push({
+        question: questions[currentQuestionIndex].question,
+        correctAnswers: questions[currentQuestionIndex].correct_answer,
+        userAnswers: null,
+        answers: [...questions[currentQuestionIndex].incorrect_answers, questions[currentQuestionIndex].correct_answer],
+        difficulty: questions[currentQuestionIndex].difficulty
+      });
 
       if (currentQuestionIndex + 1 < questions.length) {
         setTimeout(() => {
@@ -142,6 +154,7 @@ const startTimer = () => {
         setTimeout(() => {
           sessionStorage.setItem("score", score);
           sessionStorage.setItem("totalQuestions", questions.length);
+          sessionStorage.setItem("userAnswers", JSON.stringify(userAnswers));
           window.location.href = "result.html"; // VADO SU RESULT PAGINA
         }, 500); // 1/2 SEC E REINDERIZZO
       }
@@ -208,6 +221,16 @@ function handleAnswer(e, selectedAnswer) {
   const selectedButton = e.target;
   const isCorrect = selectedAnswer === questions[currentQuestionIndex].correct_answer;
 
+  console.log(userAnswers);
+
+  userAnswers.push({
+    question: questions[currentQuestionIndex].question,
+    correctAnswers: questions[currentQuestionIndex].correct_answer,
+    userAnswers: selectedAnswer,
+    answers: [...questions[currentQuestionIndex].incorrect_answers, questions[currentQuestionIndex].correct_answer],
+    difficulty: questions[currentQuestionIndex].difficulty
+  });
+
   if (isCorrect) {
     selectedButton.style.backgroundColor = "#47bc27"; // VERDE CORRETTO
   } else {
@@ -242,6 +265,7 @@ function handleAnswer(e, selectedAnswer) {
     setTimeout(() => {
       sessionStorage.setItem("score", score);
       sessionStorage.setItem("totalQuestions", questions.length);
+      sessionStorage.setItem("userAnswers", JSON.stringify(userAnswers));
       window.location.href = "result.html"; // VADO SU RESULT PAGINA
     }, 1000); // 1 SEC E REINDERIZZO
   }
