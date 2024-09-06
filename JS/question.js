@@ -231,10 +231,10 @@ function handleAnswer(e, selectedAnswer) {
 
   // Passa alla prossima domanda incrementando l'indice
   currentQuestionIndex++;
+  clearInterval(timerInterval);
   // Se ci sono altre domande, visualizza la prossima domanda, altrimenti reindirizza alla pagina dei risultati
   if (currentQuestionIndex < questions.length) {
     setTimeout(() => {
-      clearInterval(timerInterval);
       showQuestion();
     }, 500); // 1/2 SEC E REINDERIZZO
   } else {
