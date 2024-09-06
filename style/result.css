@@ -54,7 +54,10 @@ h1 {
   left: 0;
   right: 0;
   border-radius: 50%;
-  background-image: conic-gradient(#00ffff 0% var(--gradient-perc, 30%), #c2128d var(--gradient-perc, 30%) 100%);
+  background-image: conic-gradient(
+    #00ffff 0% var(--gradient-perc, 30%),
+    #c2128d var(--gradient-perc, 30%) 100%
+  );
   mask: radial-gradient(farthest-side, transparent 70%, black 70%);
   z-index: 1;
 }
@@ -114,9 +117,10 @@ footer button:hover {
   color: white;
 }
 #answers-summary h2 {
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 #questions-list {
   text-align: start;

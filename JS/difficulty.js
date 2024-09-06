@@ -86,7 +86,7 @@ buttonEasy.addEventListener("click", () => {
 
 buttonNormal.addEventListener("click", () => {
   if (InputNumber.value === "") {
-    alert("Devi inserire un valore");
+    alert("Please enter the number of questions to continue");
   } else {
     const valueAnswer = InputNumber.value;
     console.log(valueAnswer);

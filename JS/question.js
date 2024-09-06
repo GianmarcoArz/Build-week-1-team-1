@@ -136,8 +136,11 @@ const startTimer = () => {
         question: questions[currentQuestionIndex].question,
         correctAnswers: questions[currentQuestionIndex].correct_answer,
         userAnswers: null,
-        answers: [...questions[currentQuestionIndex].incorrect_answers, questions[currentQuestionIndex].correct_answer],
-        difficulty: questions[currentQuestionIndex].difficulty
+        answers: [
+          ...questions[currentQuestionIndex].incorrect_answers,
+          questions[currentQuestionIndex].correct_answer,
+        ],
+        difficulty: questions[currentQuestionIndex].difficulty,
       });
 
       if (currentQuestionIndex + 1 < questions.length) {
@@ -199,13 +202,17 @@ function showQuestion() {
   optionsContainer.innerHTML = "";
 
   // Combina le risposte CORRETTE e INCORRETTE in un unico array e LE MESCOLO.
-  const answers = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer];
+  const answers = [
+    ...currentQuestion.incorrect_answers,
+    currentQuestion.correct_answer,
+  ];
   answers.sort(() => Math.random() - 0.5); // COSì MESCOLO LE OPZIONI A CASO
 
   // CREO UN PULSANTE PER OGNI RISPOSTA E AGGIUNGO L'EVENTO CLICK
   answers.forEach((answer) => {
     const button = document.createElement("button");
     button.classList.add("question-option");
+    button.classList.add("hover");
     button.innerText = answer; // IMPOSTO IL TESTO DEL PULSANTE COME RISPOSTA
     button.onclick = (e) => handleAnswer(e, answer); // Aggiunge l'evento click che gestisce la selezione della risposta, con la e mi torna tutto ciò che sta dentro l'evento
     optionsContainer.appendChild(button);
@@ -219,7 +226,8 @@ function showQuestion() {
 // Funzione che gestisce la selezione di una risposta
 function handleAnswer(e, selectedAnswer) {
   const selectedButton = e.target;
-  const isCorrect = selectedAnswer === questions[currentQuestionIndex].correct_answer;
+  const isCorrect =
+    selectedAnswer === questions[currentQuestionIndex].correct_answer;
 
   console.log(userAnswers);
 
@@ -227,8 +235,11 @@ function handleAnswer(e, selectedAnswer) {
     question: questions[currentQuestionIndex].question,
     correctAnswers: questions[currentQuestionIndex].correct_answer,
     userAnswers: selectedAnswer,
-    answers: [...questions[currentQuestionIndex].incorrect_answers, questions[currentQuestionIndex].correct_answer],
-    difficulty: questions[currentQuestionIndex].difficulty
+    answers: [
+      ...questions[currentQuestionIndex].incorrect_answers,
+      questions[currentQuestionIndex].correct_answer,
+    ],
+    difficulty: questions[currentQuestionIndex].difficulty,
   });
 
   if (isCorrect) {
@@ -241,7 +252,7 @@ function handleAnswer(e, selectedAnswer) {
   const buttons = document.querySelectorAll(".question-option");
   buttons.forEach((button) => {
     button.disabled = true;
-    button.style.pointerEvents = "none";
+    button.classList.remove("hover");
     if (button.innerText === questions[currentQuestionIndex].correct_answer) {
       button.style.backgroundColor = "#47bc27"; // Colore verde per la risposta corretta
     }

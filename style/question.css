@@ -55,8 +55,8 @@ body {
   box-shadow: 2px -1.8px 3px 0.6px #fff, -2px -1.8px 3px 0.6px #fff;
 }
 
-.question-option:hover,
-.option:focus {
+.hover:hover,
+.hover:focus {
   background: linear-gradient(90deg, #d20094, #900080);
   border: 2px solid #d20094;
   color: #fff;
@@ -94,7 +94,10 @@ body {
   left: 0;
   right: 0;
   border-radius: 50%;
-  background-image: conic-gradient(rgba(0, 255, 255, 0.1) 0% var(--gradient-perc, 0%), var(--gradient-color, #00ffff) 0% 100%);
+  background-image: conic-gradient(
+    rgba(0, 255, 255, 0.1) 0% var(--gradient-perc, 0%),
+    var(--gradient-color, #00ffff) 0% 100%
+  );
   mask: radial-gradient(farthest-side, transparent 75%, black 75%);
   z-index: 1;
 }

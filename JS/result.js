@@ -7,6 +7,15 @@ for (let i = 0; i < userAnswers.length; i++) {
   const answer = userAnswers[i];
   const answerContainer = document.getElementById("questions-list");
   const answerDifficult = document.createElement("h4");
+
+  if (answer.difficulty === "easy") {
+    answerDifficult.style.color = "green";
+  } else if (answer.difficulty === "medium") {
+    answerDifficult.style.color = "orange";
+  } else if (answer.difficulty === "hard") {
+    answerDifficult.style.color = "red";
+  }
+
   answerDifficult.innerText = answer.difficulty;
   answerContainer.appendChild(answerDifficult);
   const question = document.createElement("h3");
