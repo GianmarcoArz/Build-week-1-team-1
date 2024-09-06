@@ -39,7 +39,7 @@ buttonPlus.addEventListener("click", () => {
 
 buttonEasy.addEventListener("click", () => {
   if (InputNumber.value === "") {
-    alert("Devi inserire un valore");
+    alert("You must enter a value");
   } else {
     const valueAnswer = InputNumber.value;
     console.log(valueAnswer);
@@ -49,8 +49,8 @@ buttonEasy.addEventListener("click", () => {
       try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
-          alert("Non siamo riusciti a trovare le domande, riprova!");
-          throw new Error("Errore nella richiesta: " + response.status);
+          alert("We couldn't find the questions, please try again!");
+          throw new Error("Error in request: " + response.status);
         }
         const data = await response.json(); // Convertire la risposta in JSON
         const questionsObject = data.results; // Estrarre l'array delle domande
@@ -58,7 +58,7 @@ buttonEasy.addEventListener("click", () => {
         // Restituisce l'oggetto delle domande
         return questionsObject;
       } catch (error) {
-        console.error("Errore nel creare l'oggetto delle domande:", error);
+        console.error("Error creating question subject:", error);
         return;
       }
     }
@@ -76,9 +76,7 @@ buttonEasy.addEventListener("click", () => {
         console.log(sessionStorage.getItem("questions"));
         window.location.href = "question.html";
       } else {
-        console.error(
-          "Nessuna domanda trovata o errore nella creazione delle domande."
-        );
+        console.error("No questions found or errors in question creation.");
       }
     });
   }
@@ -96,8 +94,8 @@ buttonNormal.addEventListener("click", () => {
       try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
-          alert("Non siamo riusciti a trovare le domande, riprova!");
-          throw new Error("Errore nella richiesta: " + response.status);
+          alert("We couldn't find the questions, please try again!");
+          throw new Error("Error: " + response.status);
         }
         const data = await response.json(); // Convertire la risposta in JSON
         const questionsObject = data.results; // Estrarre l'array delle domande
@@ -105,7 +103,7 @@ buttonNormal.addEventListener("click", () => {
         // Restituisce l'oggetto delle domande
         return questionsObject;
       } catch (error) {
-        console.error("Errore nel creare l'oggetto delle domande:", error);
+        console.error("Error creating the question subject:", error);
         return;
       }
     }
@@ -123,9 +121,7 @@ buttonNormal.addEventListener("click", () => {
         console.log(sessionStorage.getItem("questions"));
         window.location.href = "question.html";
       } else {
-        console.error(
-          "Nessuna domanda trovata o errore nella creazione delle domande."
-        );
+        console.error("No questions found or errors in question creation.");
       }
     });
   }
@@ -133,7 +129,7 @@ buttonNormal.addEventListener("click", () => {
 
 buttonHard.addEventListener("click", () => {
   if (InputNumber.value === "") {
-    alert("Devi inserire un valore");
+    alert("You must enter a value");
   } else {
     const valueAnswer = InputNumber.value;
     console.log(valueAnswer);
@@ -143,7 +139,7 @@ buttonHard.addEventListener("click", () => {
       try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
-          alert("Non siamo riusciti a trovare le domande, riprova!");
+          alert("We couldn't find the questions, please try again!");
           throw new Error("Errore nella richiesta: " + response.status);
         }
         const data = await response.json(); // Convertire la risposta in JSON
@@ -152,7 +148,7 @@ buttonHard.addEventListener("click", () => {
         // Restituisce l'oggetto delle domande
         return questionsObject;
       } catch (error) {
-        console.error("Errore nel creare l'oggetto delle domande:", error);
+        console.error("Error creating the question subject:", error);
         return;
       }
     }
@@ -170,9 +166,7 @@ buttonHard.addEventListener("click", () => {
         console.log(sessionStorage.getItem("questions"));
         window.location.href = "question.html";
       } else {
-        console.error(
-          "Nessuna domanda trovata o errore nella creazione delle domande."
-        );
+        console.error("No questions found or errors in question creation.");
       }
     });
   }
@@ -180,7 +174,7 @@ buttonHard.addEventListener("click", () => {
 
 buttonCasual.addEventListener("click", () => {
   if (InputNumber.value === "") {
-    alert("Devi inserire un valore");
+    alert("You must enter a value");
   } else {
     const valueAnswer = InputNumber.value;
     console.log(valueAnswer);
@@ -190,8 +184,8 @@ buttonCasual.addEventListener("click", () => {
       try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
-          alert("Non siamo riusciti a trovare le domande, riprova!");
-          throw new Error("Errore nella richiesta: " + response.status);
+          alert("We couldn't find the questions, please try again!");
+          throw new Error("Error in request: " + response.status);
         }
         const data = await response.json(); // Convertire la risposta in JSON
         const questionsObject = data.results; // Estrarre l'array delle domande
@@ -199,7 +193,7 @@ buttonCasual.addEventListener("click", () => {
         // Restituisce l'oggetto delle domande
         return questionsObject;
       } catch (error) {
-        console.error("Errore nel creare l'oggetto delle domande:", error);
+        console.error("Error creating question subject:", error);
         return;
       }
     }
@@ -217,9 +211,7 @@ buttonCasual.addEventListener("click", () => {
         console.log(sessionStorage.getItem("questions"));
         window.location.href = "question.html";
       } else {
-        console.error(
-          "Nessuna domanda trovata o errore nella creazione delle domande."
-        );
+        console.error("No questions found or errors in question creation.");
       }
     });
   }
