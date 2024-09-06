@@ -140,7 +140,7 @@ buttonHard.addEventListener("click", () => {
         const response = await fetch(apiUrl);
         if (!response.ok) {
           alert("We couldn't find the questions, please try again!");
-          throw new Error("Errore nella richiesta: " + response.status);
+          throw new Error("Error in the request: " + response.status);
         }
         const data = await response.json(); // Convertire la risposta in JSON
         const questionsObject = data.results; // Estrarre l'array delle domande
