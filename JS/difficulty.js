@@ -42,7 +42,6 @@ buttonEasy.addEventListener("click", () => {
     alert("You must enter a value");
   } else {
     const valueAnswer = InputNumber.value;
-    console.log(valueAnswer);
     let apiUrl = `https://opentdb.com/api.php?amount=${valueAnswer}&category=18&difficulty=easy`;
     // Funzione per creare l'oggetto con i dati delle domande
     async function createQuestionsObject() {
@@ -73,7 +72,6 @@ buttonEasy.addEventListener("click", () => {
         const questionsJSON = JSON.stringify(questions);
         sessionStorage.setItem("questions", questionsJSON);
 
-        console.log(sessionStorage.getItem("questions"));
         window.location.href = "question.html";
       } else {
         console.error("No questions found or errors in question creation.");
@@ -87,7 +85,6 @@ buttonNormal.addEventListener("click", () => {
     alert("Please enter the number of questions to continue");
   } else {
     const valueAnswer = InputNumber.value;
-    console.log(valueAnswer);
     let apiUrl = `https://opentdb.com/api.php?amount=${valueAnswer}&category=18&difficulty=medium`;
     // Funzione per creare l'oggetto con i dati delle domande
     async function createQuestionsObject() {
@@ -118,7 +115,6 @@ buttonNormal.addEventListener("click", () => {
         const questionsJSON = JSON.stringify(questions);
         sessionStorage.setItem("questions", questionsJSON);
 
-        console.log(sessionStorage.getItem("questions"));
         window.location.href = "question.html";
       } else {
         console.error("No questions found or errors in question creation.");
@@ -132,7 +128,6 @@ buttonHard.addEventListener("click", () => {
     alert("You must enter a value");
   } else {
     const valueAnswer = InputNumber.value;
-    console.log(valueAnswer);
     let apiUrl = `https://opentdb.com/api.php?amount=${valueAnswer}&category=18&difficulty=hard`;
     // Funzione per creare l'oggetto con i dati delle domande
     async function createQuestionsObject() {
@@ -163,7 +158,6 @@ buttonHard.addEventListener("click", () => {
         const questionsJSON = JSON.stringify(questions);
         sessionStorage.setItem("questions", questionsJSON);
 
-        console.log(sessionStorage.getItem("questions"));
         window.location.href = "question.html";
       } else {
         console.error("No questions found or errors in question creation.");
@@ -177,7 +171,6 @@ buttonCasual.addEventListener("click", () => {
     alert("You must enter a value");
   } else {
     const valueAnswer = InputNumber.value;
-    console.log(valueAnswer);
     let apiUrl = `https://opentdb.com/api.php?amount=${valueAnswer}&category=18`;
     // Funzione per creare l'oggetto con i dati delle domande
     async function createQuestionsObject() {
@@ -208,7 +201,6 @@ buttonCasual.addEventListener("click", () => {
         const questionsJSON = JSON.stringify(questions);
         sessionStorage.setItem("questions", questionsJSON);
 
-        console.log(sessionStorage.getItem("questions"));
         window.location.href = "question.html";
       } else {
         console.error("No questions found or errors in question creation.");

@@ -84,7 +84,6 @@
 const questJSON = sessionStorage.getItem("questions");
 
 const questions = JSON.parse(questJSON);
-console.log(questions);
 let score = 0;
 let timeLeft = 30;
 let timerInterval;
@@ -131,7 +130,6 @@ const startTimer = () => {
 
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
-      console.log(userAnswers);
       userAnswers.push({
         question: questions[currentQuestionIndex].question,
         correctAnswers: questions[currentQuestionIndex].correct_answer,
@@ -148,7 +146,6 @@ const startTimer = () => {
           clearInterval(timerInterval);
           currentQuestionIndex++;
           showQuestion();
-          console.log(currentQuestionIndex, questions.length);
           let questionNumbers = document.getElementById("questionNumbers");
           questionNumbers.innerText = currentQuestionIndex + 1;
         }, 500); // 1/2 SEC E REINDERIZZO

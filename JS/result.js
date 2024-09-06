@@ -1,8 +1,6 @@
 const score = sessionStorage.getItem("score");
-console.log(score);
 const questionLength = sessionStorage.getItem("totalQuestions");
 const userAnswers = JSON.parse(sessionStorage.getItem("userAnswers"));
-console.log(userAnswers);
 for (let i = 0; i < userAnswers.length; i++) {
   const answer = userAnswers[i];
   const answerContainer = document.getElementById("questions-list");
